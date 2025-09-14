@@ -24,7 +24,7 @@ elif [ "$role" == "AV Tech" ]; then
 elif [ "$role" == "Admin" ]; then
     groups="root"
 else
-    echo "Unknown role, defaulting to User"
+    echo "Invalid account type. Default to User."
     role="User"
     groups=""
 fi
@@ -39,7 +39,7 @@ else
     echo "Groups: None"
 fi
 
-read -p "Press Enter to create the account..."
+read -p "Enter to create account"
 if [ -n "$groups" ]; then
     sudo useradd -m -G "$groups" "$username"
 else
